@@ -21,7 +21,7 @@ class Key:
         Creating reverse key for decryption
         :return: reversed key
         """
-        reverse_key = {}
+        reversed_key = {}
         for i, j in self.key.items():
-            reverse_key[j] = i
-        return reverse_key
+            reversed_key[j] = i
+        return reversed_key

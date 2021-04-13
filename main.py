@@ -17,13 +17,13 @@ if __name__ == '__main__':
         text_for_encryption = f.read()
 
     k1 = key.Key(key_to_encrypt)
-    odwrotny_klucz = k1.createReverseKey()
+    reversed_key = k1.createReverseKey()
 
     e1 = encryption.Encryption(key_to_encrypt, text_for_encryption)
     encrypted_text = e1.encrypt()
     print(encrypted_text)
 
-    d1 = decryption.Decryption(odwrotny_klucz, encrypted_text)
+    d1 = decryption.Decryption(reversed_key, encrypted_text)
     print(d1.decrypt())
 
 
