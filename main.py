@@ -16,7 +16,6 @@ if __name__ == '__main__':
     with open('kafka.txt') as f:
         text_for_encryption = f.read()
 
-
     k1 = key.Key(key_to_encrypt)
     odwrotny_klucz = k1.createReverseKey()
 
