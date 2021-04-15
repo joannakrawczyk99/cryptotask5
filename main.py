@@ -13,8 +13,8 @@ if __name__ == '__main__':
              '.': ',', ',': '.', ':': ';', ';': ':', '?': '!', '!': '?', '-': '_', '_': '-', '(': ')', ')': '(',
              '%': '$', '$': '%', ' ': '&', '&': ' ', '+': '*', '*': '+'}
 
-    with open('kafka.txt') as f:
-        text_for_encryption = f.read()
+    with open('kafka.txt') as file:
+        text_for_encryption = file.read()
 
     k1 = key.Key(key_to_encrypt)
     reversed_key = k1.createReverseKey()
@@ -22,8 +22,10 @@ if __name__ == '__main__':
     e1 = encryption.Encryption(key_to_encrypt, text_for_encryption)
     encrypted_text = e1.encrypt()
     print(encrypted_text)
+    with open('encrypted.txt', 'w') as file:
+        file.write(encrypted_text)
 
-    d1 = decryption.Decryption(reversed_key, encrypted_text)
-    print(d1.decrypt())
+    #d1 = decryption.Decryption(reversed_key, encrypted_text)
+    #print(d1.decrypt())
 
 
