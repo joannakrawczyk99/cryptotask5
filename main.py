@@ -3,6 +3,8 @@ import encryption
 import key
 
 if __name__ == '__main__':
+
+    #key for encryption and also base for creating reversed key for decryption
     key_to_encrypt = {'a': 'q', 'b': 'v', 'c': 'x', 'd': 'z', 'e': 'y', 'f': 'w', 'g': 'u', 'h': 't', 'i': 's', 'j': 'r',
              'k': 'p', 'l': 'o', 'm': 'n', 'n': 'm', 'o': 'l', 'p': 'k', 'r': 'j', 's': 'i', 't': 'h', 'u': 'g', 'w': 'f',
              'y': 'e', 'z': 'd', 'x': 'c', 'v': 'b', 'q': 'a',
@@ -13,6 +15,7 @@ if __name__ == '__main__':
              '.': ',', ',': '.', ':': ';', ';': ':', '?': '!', '!': '?', '-': '_', '_': '-', '(': ')', ')': '(',
              '%': '$', '$': '%', ' ': '&', '&': ' ', '+': '*', '*': '+'}
 
+    #reading txt file where is the text for encryption
     with open('kafka.txt') as file:
         text_for_encryption = file.read()
 
@@ -22,6 +25,8 @@ if __name__ == '__main__':
     e1 = encryption.Encryption(key_to_encrypt, text_for_encryption)
     encrypted_text = e1.encrypt()
     print(encrypted_text)
+
+    #saving encrypted message to txt file
     with open('encrypted.txt', 'w') as file:
         file.write(encrypted_text)
 
